@@ -1,0 +1,33 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hh
+spec:
+  replicas: 
+  selector:
+    matchLabels:
+      app: hh
+  template:
+    metadata:
+      labels:
+        app: hh
+    spec:
+      containers:
+      - name: hh
+        image: noicecurse.jfrog.io/default-docker-local/utkarshneo/fff:1
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+        - name: jfrog
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hh
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 8080
+  selector:
+    app: hh

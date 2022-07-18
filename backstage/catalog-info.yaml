@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "hh"
+  description: "hj"  
+  annotations:
+    github.com/project-slug: utkarshneo/fff
+spec:
+  type: service
+  owner: "guests"
+  lifecycle: experimental
